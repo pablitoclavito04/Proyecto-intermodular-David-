@@ -21,7 +21,10 @@
 
 
 ## Definid el MVP (Producto Mínimo Viable).
-m
+El producto mínimo viable de nuestra aplicación sería permitir que el usuario pudiera realizar pruebas de entrevistas de trabajo por medio oral y que el programa pudiera recopilar esa información dada por la conversación del usuario y mediante  agentes de inteligencia ártificial. La forma de mostrar los resultados podrían ser mediante texto o voz pero de momento podría ser texto ya que lo importante es que el usuario se pueda comunicar con la voz. El punto clave es que el programa debería ser capaz de comunicarse con el usuario por medio de preguntas y que el usuario pueda responderle por medio de voz y recopilando todo lo que dice incluso las muletillas que tenga mientras habla incluso el tiempo que tarda pensando, ya que el objetivo es ser críticos igual que pasaría en una entrevista de trabajo.
+
+
+
 
 Análisis de requisitos técnicos:
 

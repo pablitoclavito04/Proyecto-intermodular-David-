@@ -19,6 +19,15 @@
 
 ### - Librerías y frameworks específicos:
 
+Para React:
+- **React-media-recorder:** Permite grabar audio/video directamente en el navegador.
+- **Axios:** La usaremos para conectar el frontend con el backend.
+- **Material-UI:** Usar componentes predefinidos para facilitar el desarrollo debido al tiempo limitado del proyecto.
+- **react-router-dom:** Permitir que la página web simule múltiples páginas y deje de ser una SPA tradicional.
+
+Para SpringBoot y Express:
+- **Deepgram:** Usada en node para permitir transcribir los audios y además detectar las muletillas.
+- **Replicate:** Usada para realizar llamadas a modelos de inteligencia artificial.
 
 ### - Servicios de hosting y bases de datos:
 

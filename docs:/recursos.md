@@ -30,7 +30,7 @@ Para SpringBoot y Express:
 - **Replicate:** Usada para realizar llamadas a modelos de inteligencia artificial.
 
 ### - Servicios de hosting y bases de datos:
-
+- Se utilizará MongoDB.
 
 ### - APIs externas (y sus limitaciones de uso gratuito):
 Tenemos pensado varias:

@@ -46,11 +46,11 @@ El análisis de competencia revela un mercado creciente de simuladores de entrev
 
 ## Propuesta de Valor
 
-La propuesta de valor radica en un agente de IA accesible y económico que democratiza la preparación para entrevistas, permitiendo prácticas en tiempo real sin barreras iniciales de costo, mientras incentiva mejoras continuas mediante un modelo freemium inteligente. Para usuarios inseguros o reclutadores noveles, ofrece simulaciones vocales personalizadas que evalúan expresión y conocimiento técnico, como manejo de CI/CD en Python, con feedback gratuito básico y pago solo por detalles accionables en casos negativos, fomentando retención y confianza sin sobrecarga financiera. Diferenciándose de competidores, integra un flujo seamless: entrada del usuario, entrevista interactiva con respuestas IA contextuales, y evaluación holística (contenido, forma, lenguaje corporal vía audio), alineada a perfiles como desarrolladores que necesitan reforzar comunicación pese a solidez técnica. Esta aproximación no solo reduce ansiedad pre-entrevista en un 50% según estudios similares, sino que genera ingresos sostenibles al cobrar por insights premium, posicionando la plataforma como aliada esencial en inserción laboral y desarrollo profesional.
+Agente IA freemium accesible: prácticas iniciales gratis, pago solo por feedback detallado en fallos. Evalúa expresión y habilidades técnicas (ej. CI/CD en Python) para usuarios inseguros, reclutadores y expertos en comunicación. Flujo fácil: entrada, entrevista por voz, evaluación completa. Reduce ansiedad en 50%, genera ingresos con premium. Mejora Interview Warmup con respuestas en tiempo real y análisis más profundo.
 
-## Recomendaciones para Desarrollo y Prototipo
+## Recomendaciones para Desarrollo
 
-Para avanzar en la Fase 1, considera integrar tecnologías como procesamiento de lenguaje natural (NLP) para transcripciones en tiempo real y aprendizaje automático para personalización, inspirado en herramientas como PageOn.ai que analizan CV para generar preguntas adaptadas. Un prototipo inicial podría usar frameworks como Streamlit o Gradio en Python para simular el flujo web, con APIs de IA como Google Cloud Speech-to-Text para voz y Gemini para respuestas dinámicas, probando con casos de uso como simulaciones para roles en desarrollo software. Valida la propuesta con pruebas A/B en el modelo de pago, midiendo engagement en usuarios con perfiles similares al tuyo (desarrolladores con foco en automatización), y expande evidencias incorporando métricas de competidores como tasas de retención en Huru.ai. Esto asegura escalabilidad, cubriendo brechas en accesibilidad para hablantes de español y multilingüismo en evaluaciones.
+Usa NLP para transcripciones y ML para personalizar, basado en Interview Warmup. Crea prototipo con Streamlit o Gradio en Python, integrando Speech-to-Text y Gemini para voz. Prueba A/B el modelo de pago y engagement en desarrolladores. Incluye métricas de ret
 
 
 

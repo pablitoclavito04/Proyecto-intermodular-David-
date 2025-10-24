@@ -46,11 +46,9 @@ El análisis de competencia revela un mercado creciente de simuladores de entrev
 
 ## Propuesta de Valor
 
-Agente IA freemium accesible: prácticas iniciales gratis, pago solo por feedback detallado en fallos. Evalúa expresión y habilidades técnicas (ej. CI/CD en Python) para usuarios inseguros, reclutadores y expertos en comunicación. Flujo fácil: entrada, entrevista por voz, evaluación completa. Reduce ansiedad en 50%, genera ingresos con premium. Mejora Interview Warmup con respuestas en tiempo real y análisis más profundo.
+Agente IA freemium accesible: prácticas iniciales gratis, pago solo por feedback detallado en fallos. Evalúa expresión y habilidades técnicas  para usuarios inseguros, reclutadores y expertos en comunicación. Flujo fácil: entrada, entrevista por voz, evaluación completa. Reduce ansiedad en 50%, genera ingresos con premium. Mejora Interview Warmup con respuestas en tiempo real y análisis más profundo.
 
 ## Recomendaciones para Desarrollo
-
-Usa NLP para transcripciones y ML para personalizar, basado en Interview Warmup. Crea prototipo con Streamlit o Gradio en Python, integrando Speech-to-Text y Gemini para voz. Prueba A/B el modelo de pago y engagement en desarrolladores. Incluye métricas de ret
-
+Usa NLP para transcripciones y ML para personalizar, basado en Interview Warmup. Crea prototipo con stack MERN (MongoDB para datos de sesiones, Express para API backend, React para interfaz web interactiva, Node.js para lógica de IA). Integra Speech-to-Text y Gemini vía APIs en Node.js para manejo de voz en tiempo real. Prueba A/B el modelo de pago y engagement en desarrolladores. Incluye métricas de retención de competidores. Garantiza escalabilidad en español y multilingüe con autenticación JWT y rutas protegidas en Express.
 
 

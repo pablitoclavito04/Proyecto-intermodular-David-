@@ -44,18 +44,55 @@ El producto mínimo viable de nuestra aplicación sería permitir que el usuario
 
 ### Base de datos (MongoDB): Diseñad un esquema preliminar de las colecciones principales
 
+![EsquemaMongoDB](image.png)
+
+### Aplicación: Diseñad un esquema para la arquitectura de la aplicación.
+
+### Infraestructura: ¿Dónde desplegaréis? (VPS, Vercel, Render, Railway, etc.) ¿Necesitáis servicios cloud?
 
 
-# TODO
+
+### Evaluación de capacidades del equipo:
+
+#### Pablo Sanz
+##### ¿Quién tiene experiencia en qué?
+
+Yo tengo experiencia en HTML, CSS y algo de Java.
+
+##### ¿Qué necesitaréis aprender?
+C#, C++, Java, Programación en general, Blender, Animación, Inglés, y Japonés.
+
+##### Valorad si es realista completar el proyecto en el tiempo disponible.
+Yo pienso que no, por la complejidad de implementar las APIs, características complejas y tiempo limitado.
 
 
-Infraestructura: ¿Dónde desplegaréis? (VPS, Vercel, Render, Railway, etc.) ¿Necesitáis servicios cloud?
-Evaluación de capacidades del equipo:
+#### Alejandro Bravo
+##### ¿Quién tiene experiencia en qué?
 
-Haced un inventario de habilidades: ¿Quién tiene experiencia en qué?
-Identificad lagunas de conocimiento: ¿Qué necesitaréis aprender?
-Valorad si es realista completar el proyecto en el tiempo disponible.
-Identificación de riesgos técnicos:
+Yo tengo experiencia en HTML, CSS, Kotlin, Java, Bash, Python, librerías para inteligencia artificial, React, Typescript, Javascript.
 
-Listad al menos 5 riesgos potenciales (técnicos, de tiempo, de recursos).
-Proponed estrategias de mitigación para cada riesgo.
+##### ¿Qué necesitaréis aprender?
+Necesitaría aprender tecnologías de backend como por ejemplo Spring boot, también necesitaría reforzar más mi nivel de ingles y aprender a usar frameworks del frontend como tailwind.
+
+##### Valorad si es realista completar el proyecto en el tiempo disponible.
+Mi opinion es que si nos podría dar tiempo de acabarlo pero necesitamos esforzarnos mucho y que todo el equipo funcione correctamente, todavía no puedo dar opinion sobre si realmente es realista o no el hecho de cumplir el objetivo ya que no conozco a mis compañeros lo suficiente como para saber si se van a esforzar o si saben trabajar en equipo.
+
+
+
+##### ⁠Listad al menos 5 riesgos potenciales (técnicos, de tiempo, de recursos):
+
+•⁠  Que la api no funcione.
+•⁠  Lógica de la aplicación.
+•⁠  Problemas técnicos ya que no tenemos experiencia en estas tecnologías.
+•⁠  ⁠Compatibilidad con navegadores o dispositivos.
+•⁠  Lógica a la hora de realizar la evaluación al usuario.
+
+### Proponed estrategias de mitigación para cada riesgo.
+
+Para mitigar los riesgos que tienen que ver con las tecnologías que no dominamos lo que se puede hacer es prácticar para aprender a usarlas. En cuanto a la lógica de la aplicación lo que se puede hacer es intentar mitigar el problema complejo repartiendo el trabajo por los miembros del equipo. 
+
+En cuanto a los problemas que podríamos tener si la api no funcionase lo que se puede hacer es tener videos para que en caso de error podamos mostrar una versión de la aplicación que funionase.
+
+Para intentar mitigar el problema dado por la compatibilidad con los navegadores y dispositivos lo que podemos hacer es intentar usar solo cosas que sean estandar.
+
+Para intentar solucionar los problemas dados por la lógica a la hora de realizar la evaluación del usuario lo que pomdemos hacer es apoyarnos de la inteligencia artificial para intentar facilitar el proceso de desarollo.

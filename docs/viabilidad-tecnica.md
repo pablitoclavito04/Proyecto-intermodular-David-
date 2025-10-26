@@ -96,7 +96,12 @@ Mi opinion es que si nos podría dar tiempo de acabarlo pero necesitamos esforza
 
 Yo tengo experiencia en Kotlin,algo de python,Java y HTML.
 
-### ⁠¿Qué necesitaréis aprender?
+
+
+
+#### ⁠¿Qué necesitaréis aprender?
+
+
 
 C#, C++, Java, Programación en general, Inglés e Italiano.
 

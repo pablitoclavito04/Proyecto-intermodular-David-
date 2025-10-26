@@ -66,9 +66,11 @@ La aplicación web se desplegaría en cloudflare.
 Yo tengo experiencia en HTML, CSS y algo de Java.
 
 #### ¿Qué necesitaréis aprender?
+
 C#, C++, Java, Programación en general, Blender, Animación, Inglés, y Japonés.
 
 #### Valorad si es realista completar el proyecto en el tiempo disponible.
+
 Yo pienso que no, por la complejidad de implementar las APIs, características complejas y tiempo limitado.
 
 
@@ -91,6 +93,7 @@ Mi opinion es que si nos podría dar tiempo de acabarlo pero necesitamos esforza
 
 
 #### ¿Quién tiene experiencia en qué?
+
 Yo tengo experiencia en Kotlin,algo de python,Java y HTML.
 
 #### ⁠¿Qué necesitaréis aprender?

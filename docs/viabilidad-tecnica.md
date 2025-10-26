@@ -120,7 +120,7 @@ Yo pienso que no no solo por la complejidad de la implementación de las APIs o 
 
 -⁠  ⁠Compatibilidad con navegadores o dispositivos.
 
-- Lógica a la hora de realizar la evaluación al usuario.
+-  Lógica a la hora de realizar la evaluación al usuario.
 
 ### Proponed estrategias de mitigación para cada riesgo.
 

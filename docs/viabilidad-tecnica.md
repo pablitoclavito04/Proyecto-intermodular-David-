@@ -112,11 +112,15 @@ Yo pienso que no no solo por la complejidad de la implementación de las APIs o 
 
 #### ⁠Listad al menos 5 riesgos potenciales (técnicos, de tiempo, de recursos):
 
-•⁠  Que la api no funcione.
-•⁠  Lógica de la aplicación.
-•⁠  Problemas técnicos ya que no tenemos experiencia en estas tecnologías.
-•⁠  ⁠Compatibilidad con navegadores o dispositivos.
-•⁠  Lógica a la hora de realizar la evaluación al usuario.
+-⁠  Que la api no funcione.
+
+-⁠  Lógica de la aplicación.
+
+-⁠  Problemas técnicos ya que no tenemos experiencia en estas tecnologías.
+
+-⁠  ⁠Compatibilidad con navegadores o dispositivos.
+
+-  Lógica a la hora de realizar la evaluación al usuario.
 
 ### Proponed estrategias de mitigación para cada riesgo.
 

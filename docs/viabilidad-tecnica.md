@@ -38,6 +38,7 @@ El producto mínimo viable de nuestra aplicación sería permitir que el usuario
 ### Backend (Node.js + Express): ¿Qué APIs o servicios externos integraréis? ¿Necesitáis autenticación? ¿Qué tipo?
 
 #### Servicios:
+
 - **Deepgram** Usada en node para permitir transcribir los audios y además detectar las muletillas
 - **Replicate** Usada para realizar llamadas a modelos de inteligencia artificial.
 
@@ -58,43 +59,50 @@ La aplicación web se desplegaría en cloudflare.
 
 ### Evaluación de capacidades del equipo:
 
-#### Pablo Sanz
-##### ¿Quién tiene experiencia en qué?
+### Pablo Sanz
+
+#### ¿Quién tiene experiencia en qué?
 
 Yo tengo experiencia en HTML, CSS y algo de Java.
 
-##### ¿Qué necesitaréis aprender?
+#### ¿Qué necesitaréis aprender?
 C#, C++, Java, Programación en general, Blender, Animación, Inglés, y Japonés.
 
-##### Valorad si es realista completar el proyecto en el tiempo disponible.
+#### Valorad si es realista completar el proyecto en el tiempo disponible.
 Yo pienso que no, por la complejidad de implementar las APIs, características complejas y tiempo limitado.
 
 
-#### Alejandro Bravo
-##### ¿Quién tiene experiencia en qué?
+### Alejandro Bravo
+
+#### ¿Quién tiene experiencia en qué?
 
 Yo tengo experiencia en HTML, CSS, Kotlin, Java, Bash, Python, librerías para inteligencia artificial, React, Typescript, Javascript.
 
-##### ¿Qué necesitaréis aprender?
+#### ¿Qué necesitaréis aprender?
+
 Necesitaría aprender tecnologías de backend como por ejemplo Spring boot, también necesitaría reforzar más mi nivel de ingles y aprender a usar frameworks del frontend como tailwind.
 
-##### Valorad si es realista completar el proyecto en el tiempo disponible.
+#### Valorad si es realista completar el proyecto en el tiempo disponible.
+
 Mi opinion es que si nos podría dar tiempo de acabarlo pero necesitamos esforzarnos mucho y que todo el equipo funcione correctamente, todavía no puedo dar opinion sobre si realmente es realista o no el hecho de cumplir el objetivo ya que no conozco a mis compañeros lo suficiente como para saber si se van a esforzar o si saben trabajar en equipo.
 
 
-#### Sergio
-##### ¿Quién tiene experiencia en qué?
+### Sergio
+
+
+#### ¿Quién tiene experiencia en qué?
 Yo tengo experiencia en Kotlin,algo de python,Java y HTML.
 
-##### ⁠¿Qué necesitaréis aprender?
+#### ⁠¿Qué necesitaréis aprender?
+
 C#, C++, Java, Programación en general, Inglés e Italiano.
 
-##### Valorad si es realista completar el proyecto en el tiempo disponible.
+#### Valorad si es realista completar el proyecto en el tiempo disponible.
 
 Yo pienso que no no solo por la complejidad de la implementación de las APIs o el tiempo limitado sino también por nuestra nula experiencia a la hora de trabajar en proyectos de esta escala
 
 
-##### ⁠Listad al menos 5 riesgos potenciales (técnicos, de tiempo, de recursos):
+#### ⁠Listad al menos 5 riesgos potenciales (técnicos, de tiempo, de recursos):
 
 •⁠  Que la api no funcione.
 •⁠  Lógica de la aplicación.

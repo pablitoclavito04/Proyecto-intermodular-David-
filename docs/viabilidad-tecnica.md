@@ -122,6 +122,8 @@ Yo pienso que no no solo por la complejidad de la implementación de las APIs o 
 
 -  Lógica a la hora de realizar la evaluación al usuario.
 
+
+
 ### Proponed estrategias de mitigación para cada riesgo.
 
 Para mitigar los riesgos que tienen que ver con las tecnologías que no dominamos lo que se puede hacer es prácticar para aprender a usarlas. En cuanto a la lógica de la aplicación lo que se puede hacer es intentar mitigar el problema complejo repartiendo el trabajo por los miembros del equipo. 

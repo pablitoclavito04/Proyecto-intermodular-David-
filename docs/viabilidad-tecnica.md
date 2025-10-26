@@ -48,11 +48,12 @@ El producto mínimo viable de nuestra aplicación sería permitir que el usuario
 
 ### Aplicación: Diseñad un esquema para la arquitectura de la aplicación.
 
-
+![Imagen arquitectura de la aplicacion](asserts/arquitecturaPaginaWeb.svg)
 
 
 ### Infraestructura: ¿Dónde desplegaréis? (VPS, Vercel, Render, Railway, etc.) ¿Necesitáis servicios cloud?
 
+La aplicación web se desplegaría en cloudflare.
 
 
 ### Evaluación de capacidades del equipo:

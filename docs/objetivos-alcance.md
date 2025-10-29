@@ -1,6 +1,8 @@
 # c) objetivos-alcance.md (Criterio 2d)
 
-## Objetivos SMART del proyecto.
+## Objetivos del proyecto (SMART y especificos).
+
+### Objetivos SMART
 
 - **Específico:** Desarrollar una aplicación web que permita a los usuarios practicar entrevistas respondiendo a preguntas predefinidas y recibir un resultado automático basado en sus respuestas.
 
@@ -12,21 +14,38 @@
 
 - **Temporal:** Lograr el despliegue de la versión MVP funcional, con todos los flujos contemplados, antes del cierre del curso académico (mayo de 2025).
 
-## Definición del MVP.
-El MVP es el producto minimo viable, es decir, el flujo minimo que seguirá el usuario para completar una tarea, este es el siguiente:
+### Objetivos generales y especificos
 
-1. Iniciar Sesión
-2. Creamos una entrevista con las preguntas predefinidas
-3. Le pasamos las preguntas predefinidas
-4. Usuario se queda en la pantalla de carga
-5. Empezamos la entrevista (Responde a las preguntas de la entrevista)
-6. Realizamos la entrevista (Respondió a las preguntas de la entrevista)
-7. El Usuario entra en la pantalla de carga
-8. Recibimos el resultado de la entrevista (en este caso se ha aprobado)
-9. salimos de los resultados de la entrevista
+#### Objetivo general
+Desarrollar una aplicación web que permita a los usuarios practicar entrevistas mediante preguntas predefinidas, proporcionando una evaluación automática basada en sus respuestas para mejorar su preparación en procesos reales.
 
+#### Objetivos especificos
 
-## Delimitación del alcance (qué SÍ y qué NO).
+- Diseñar un flujo de entrevistas en el que se presenten preguntas predefinidas y se recojan las respuestas del usuario.
+
+- Automatizar la corrección de entrevistas para ofrecer un resultado inmediato (aprobado/no aprobado) al finalizar el proceso.
+
+- Garantizar que el usuario reciba retroalimentación clara y sencilla tras completar la entrevista.
+
+- Validar que el sistema funcione correctamente con usuarios de prueba, asegurando una experiencia sin errores críticos de usabilidad ni de funcionamiento.
+
+## Criterios de éxito.
+
+Se consideran criterios de éxito para validar si el MVP cumple su propósito:
+
+- El usuario puede acceder al sistema y completar el flujo completo de una entrevista.
+
+- La aplicación muestra preguntas predefinidas y recibe las respuestas correctamente.
+
+- El resultado de la entrevista es calculado y mostrado al usuario sin errores.
+
+- El sistema detecta y controla intentos no válidos (ejemplos: acceso sin sesión, respuestas en blanco, etc.).
+
+- El tiempo de respuesta y procesamiento es aceptable, sin esperas mayores de 10 segundos entre etapas clave.
+
+- Al menos el 90% de usuarios de prueba informan que comprendieron el proceso sin ayuda adicional.
+
+## Delimitación del alcance (qué SÍ y qué NO, posibles ampliaciones).
 
 ### Incluye (Sí):
 
@@ -55,18 +74,3 @@ El MVP es el producto minimo viable, es decir, el flujo minimo que seguirá el u
 - Integración con redes sociales o notificaciones automáticas externas.
 
 
-## Criterios de éxito.
-
-Se consideran criterios de éxito para validar si el MVP cumple su propósito:
-
-- El usuario puede acceder al sistema y completar el flujo completo de una entrevista.
-
-- La aplicación muestra preguntas predefinidas y recibe las respuestas correctamente.
-
-- El resultado de la entrevista es calculado y mostrado al usuario sin errores.
-
-- El sistema detecta y controla intentos no válidos (ejemplos: acceso sin sesión, respuestas en blanco, etc.).
-
-- El tiempo de respuesta y procesamiento es aceptable, sin esperas mayores de 10 segundos entre etapas clave.
-
-- Al menos el 90% de usuarios de prueba informan que comprendieron el proceso sin ayuda adicional.

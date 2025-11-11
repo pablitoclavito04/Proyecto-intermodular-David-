@@ -1,0 +1,44 @@
+{
+  "name": "preparat-cliente",
+  "version": "1.0.0",
+  "description": "Cliente de PrepáraT - Aplicación de práctica de entrevistas con IA",
+  "private": true,
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^7.9.5",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^3.5.0"
+  },
+  "scripts": {
+    "dev": "concurrently \"npm run servidor\" \"npm run cliente\"",
+    "cliente": "react-scripts start",
+    "servidor": "cd ../servidor && npm run dev",
+    "start": "npm run dev",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "install:servidor": "cd ../servidor && npm install"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

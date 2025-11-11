@@ -11,12 +11,12 @@ const PantallaCarga = () => {
   const [mensajeActual, setMensajeActual] = useState(0);
 
   const mensajes = [
-    { texto: 'Preparando tu entrevista...', icono: '�' },
-    { texto: 'Cargando preguntas...', icono: '�' },
-    { texto: 'Configurando el sistema de audio...', icono: '🎤' },
-    { texto: 'Inicializando IA...', icono: '🤖' },
-    { texto: 'Preparando evaluación...', icono: '📊' },
-    { texto: '¡Todo listo!', icono: '✨' }
+    { texto: 'Preparando tu entrevista...'},
+    { texto: 'Cargando preguntas...'},
+    { texto: 'Configurando el sistema de audio... '},
+    { texto: 'Inicializando IA...' },
+    { texto: 'Preparando evaluación...'},
+    { texto: '¡Todo listo!' }
   ];
 
   useEffect(() => {

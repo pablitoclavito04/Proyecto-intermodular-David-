@@ -1,24 +1,40 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAutenticacion } from '../contexto/ContextoAutenticacion';
 import '../estilos/estilos.css';
 
 const Historial = () => {
   const navigate = useNavigate();
-  const { usuario, esPremium } = useAutenticacion();
+  const { usuario, esPremium, cargando, cerrarSesion } = useAutenticacion();
+  const [verificado, setVerificado] = useState(false);
 
-  // Redirigir si no es premium
+  // Redirigir solo después de cargar el usuario desde localStorage
   useEffect(() => {
+    if (cargando) {
+      return; // Esperar a que termine de cargar
+    }
+
     if (!usuario) {
       navigate('/inicio-sesion');
     } else if (!esPremium()) {
       navigate('/pago');
+    } else {
+      setVerificado(true);
     }
-  }, [usuario, esPremium, navigate]);
+  }, [usuario, esPremium, navigate, cargando]);
 
-  if (!usuario || !esPremium()) {
-    return null;
+  // Mostrar cargador mientras verifica
+  if (cargando || !verificado) {
+    return (
+      <div className="pantalla-completa pantalla-completa--centrada">
+        <div className="cargador">
+          <div className="cargador__spinner"></div>
+          <p className="cargador__texto">Cargando historial...</p>
+        </div>
+      </div>
+    );
   }
+
 
   const historial = usuario.historialEntrevistas || [];
 
@@ -61,6 +77,17 @@ const Historial = () => {
             <Link to="/historial" className="encabezado__enlace encabezado__enlace--activo">
               Historial
             </Link>
+            <button
+              onClick={() => {
+                if (window.confirm('¿Estás seguro de que quieres cerrar sesión?')) {
+                  cerrarSesion();
+                  navigate('/');
+                }
+              }}
+              className="boton boton--secundario boton--pequeno"
+            >
+              Cerrar Sesión
+            </button>
             <div className="avatar">
               <span>{usuario.nombre?.[0]?.toUpperCase() || 'U'}</span>
             </div>

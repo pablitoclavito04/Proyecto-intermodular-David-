@@ -3,7 +3,7 @@
  * Gestiona todas las peticiones a la API de IA
  */
 
-const URL_BASE_API = 'http://localhost:5000/api';
+const URL_BASE_API = 'http://localhost:5001/api';
 
 /**
  * Realiza una petición POST al servidor
@@ -102,7 +102,7 @@ export async function obtenerAclaracion(pregunta, transcripcion = []) {
  */
 export async function verificarServidor() {
     try {
-        const respuesta = await fetch('http://localhost:5000/');
+        const respuesta = await fetch('http://localhost:5001/');
         return respuesta.ok;
     } catch (error) {
         console.error('Error al verificar servidor:', error);

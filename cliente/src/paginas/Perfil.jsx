@@ -1,17 +1,60 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAutenticacion } from '../contexto/ContextoAutenticacion';
 import '../estilos/estilos.css';
 
 const Perfil = () => {
+  const navigate = useNavigate();
+  const { usuario: usuarioContexto, cargando, cerrarSesion, estaAutenticado } = useAutenticacion();
   const [editando, setEditando] = useState(false);
+  const [verificado, setVerificado] = useState(false);
   const [usuario, setUsuario] = useState({
-    nombre: 'Juan',
-    apellidos: 'Pérez García',
-    email: 'juan.perez@email.com',
-    telefono: '+34 600 123 456',
-    ocupacion: 'Desarrollador Frontend',
-    ubicacion: 'Madrid, España',
-    biografia: 'Desarrollador apasionado por crear experiencias web excepcionales. Especializado en React y tecnologías modernas.'
+    nombre: '',
+    apellidos: '',
+    email: '',
+    telefono: '',
+    ocupacion: '',
+    ubicacion: '',
+    biografia: ''
   });
+
+  // Cargar datos del usuario autenticado
+  useEffect(() => {
+    if (cargando) {
+      return;
+    }
+
+    if (!estaAutenticado()) {
+      navigate('/inicio-sesion');
+      return;
+    }
+
+    // Cargar datos del usuario del contexto
+    if (usuarioContexto) {
+      setUsuario({
+        nombre: usuarioContexto.nombre || '',
+        apellidos: usuarioContexto.apellidos || '',
+        email: usuarioContexto.email || '',
+        telefono: usuarioContexto.telefono || '',
+        ocupacion: usuarioContexto.ocupacion || '',
+        ubicacion: usuarioContexto.ubicacion || '',
+        biografia: usuarioContexto.biografia || ''
+      });
+      setVerificado(true);
+    }
+  }, [usuarioContexto, cargando, estaAutenticado, navigate]);
+
+  // Mostrar cargador mientras verifica
+  if (cargando || !verificado) {
+    return (
+      <div className="pantalla-completa pantalla-completa--centrada">
+        <div className="cargador">
+          <div className="cargador__spinner"></div>
+          <p className="cargador__texto">Cargando perfil...</p>
+        </div>
+      </div>
+    );
+  }
 
   const estadisticas = {
     entrevistasCompletadas: 24,
@@ -72,15 +115,29 @@ const Perfil = () => {
             PrepáraT
           </div>
           <nav className="encabezado__nav">
-            <a href="/lobby" className="encabezado__enlace">
+            <Link to="/lobby" className="encabezado__enlace">
               Inicio
-            </a>
-            <a href="/perfil" className="encabezado__enlace encabezado__enlace--activo">
+            </Link>
+            <Link to="/perfil" className="encabezado__enlace encabezado__enlace--activo">
               Mi Perfil
-            </a>
-            <a href="/historial" className="encabezado__enlace">
+            </Link>
+            <Link to="/historial" className="encabezado__enlace">
               Historial
-            </a>
+            </Link>
+            <button
+              onClick={() => {
+                if (window.confirm('¿Estás seguro de que quieres cerrar sesión?')) {
+                  cerrarSesion();
+                  navigate('/');
+                }
+              }}
+              className="boton boton--secundario boton--pequeno"
+            >
+              Cerrar Sesión
+            </button>
+            <div className="avatar">
+              <span>{usuario.nombre?.[0]?.toUpperCase() || 'U'}</span>
+            </div>
           </nav>
         </div>
       </header>
@@ -372,7 +429,15 @@ const Perfil = () => {
               </div>
               
               <div style={{ marginTop: 'var(--espacio-2xl)', paddingTop: 'var(--espacio-lg)', borderTop: '1px solid var(--borde-color)' }}>
-                <button className="boton boton--error">
+                <button
+                  className="boton boton--error"
+                  onClick={() => {
+                    if (window.confirm('¿Estás seguro de que quieres cerrar sesión?')) {
+                      cerrarSesion();
+                      navigate('/');
+                    }
+                  }}
+                >
                   Cerrar Sesión
                 </button>
               </div>

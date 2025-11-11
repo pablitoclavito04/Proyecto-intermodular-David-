@@ -68,21 +68,23 @@ const Resultados = () => {
       return;
     }
 
-    // Si es gratuito y no aprobó, redirigir a pago
-    if (!esPremium() && evaluacion.veredicto === 'NO_APROBADO') {
-      navigate('/pago');
-      return;
-    }
-
-    // Si es premium, redirigir al historial donde están todas las entrevistas
+    // Si es premium, puede descargar siempre
     if (esPremium()) {
-      console.log('✅ Usuario premium - redirigiendo al historial');
-      navigate('/historial');
+      console.log('✅ Usuario premium - Descargando resultados');
+      // Aquí iría la lógica real de descarga de PDF
+      alert('Descargando PDF de resultados... (Funcionalidad en desarrollo)');
       return;
     }
 
-    // Si es gratuito y aprobó, no necesita pagar
-    alert('Como aprobaste, puedes continuar gratis. Si quieres el análisis detallado y acceso al historial, actualiza a Premium.');
+    // Si es gratuito y aprobó, puede descargar
+    if (evaluacion.veredicto === 'APROBADO') {
+      console.log('✅ Usuario gratuito aprobado - Descargando resultados básicos');
+      alert('Descargando resultados básicos... Como aprobaste, puedes descargar gratis. ¡Actualiza a Premium para análisis detallado!');
+      return;
+    }
+
+    // Si es gratuito y no aprobó, necesita premium
+    navigate('/pago');
   };
 
   const handleVerAnalisisDetallado = () => {

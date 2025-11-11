@@ -1,5 +1,5 @@
 # Imagen base de MongoDB
-FROM mongo:7.0
+FROM mongo:8.2
 
 # Etiquetas de información
 LABEL maintainer="tu-email@ejemplo.com"

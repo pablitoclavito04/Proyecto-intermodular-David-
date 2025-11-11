@@ -251,13 +251,6 @@ const CrearCuenta = () => {
           </button>
         </form>
 
-        <div className="auth-caja__divider">
-          <span>o</span>
-        </div>
-
-        <button className="boton boton--secundario boton--completo">
-          <span>🔐</span> Continuar con Google
-        </button>
 
         <div className="auth-caja__enlace">
           <p>¿Ya tienes una cuenta? <Link to="/inicio-sesion">Iniciar sesión</Link></p>

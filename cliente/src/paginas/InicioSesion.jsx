@@ -154,13 +154,6 @@ const InicioSesion = () => {
           </button>
         </form>
 
-        <div className="auth-caja__divider">
-          <span>o</span>
-        </div>
-
-        <button className="boton boton--secundario boton--completo">
-          <span>🔐</span> Continuar con Google
-        </button>
 
         <div className="auth-caja__enlace">
           <p>¿No tienes una cuenta? <Link to="/crear-cuenta">Crear cuenta</Link></p>

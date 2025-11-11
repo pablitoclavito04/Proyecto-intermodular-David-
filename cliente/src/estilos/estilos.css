@@ -853,22 +853,6 @@ select {
   color: var(--color-primario-hover);
 }
 
-.auth-caja__divider {
-  display: flex;
-  align-items: center;
-  gap: var(--espacio-md);
-  margin: var(--espacio-lg) 0;
-  color: var(--texto-secundario);
-  font-size: var(--fuente-sm);
-}
-
-.auth-caja__divider::before,
-.auth-caja__divider::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background-color: var(--borde-color);
-}
 
 /* Lobby */
 .lobby {

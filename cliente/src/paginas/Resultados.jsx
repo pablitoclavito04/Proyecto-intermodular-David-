@@ -95,7 +95,6 @@ const Resultados = () => {
 
     if (!esPremium()) {
       navigate('/pago');
-      return;
     }
   };
 
@@ -126,37 +125,25 @@ const Resultados = () => {
     <>
       {/* Modal de Login */}
       {mostrarModalLogin && (
-        <div style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: 'rgba(0, 0, 0, 0.7)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          zIndex: 1000
-        }}>
-          <div className="tarjeta" style={{ maxWidth: '500px', margin: 'var(--espacio-md)' }}>
-            <h2 style={{ fontSize: 'var(--fuente-2xl)', fontWeight: '700', marginBottom: 'var(--espacio-md)' }}>
+        <div className="resultados-modal">
+          <div className="resultados-modal__contenido tarjeta">
+            <h2 className="resultados-modal__titulo">
               Inicia Sesión para Descargar
             </h2>
-            <p style={{ color: 'var(--texto-secundario)', marginBottom: 'var(--espacio-xl)' }}>
+            <p className="resultados-modal__texto">
               Para descargar tus resultados y acceder al análisis completo, necesitas iniciar sesión o crear una cuenta.
             </p>
-            <div style={{ display: 'flex', gap: 'var(--espacio-md)', flexWrap: 'wrap' }}>
-              <Link to="/inicio-sesion" className="boton boton--primario" style={{ flex: 1 }}>
+            <div className="resultados-modal__acciones">
+              <Link to="/inicio-sesion" className="boton boton--primario resultados-modal__accion">
                 Iniciar Sesión
               </Link>
-              <Link to="/crear-cuenta" className="boton boton--secundario" style={{ flex: 1 }}>
+              <Link to="/crear-cuenta" className="boton boton--secundario resultados-modal__accion">
                 Crear Cuenta
               </Link>
             </div>
             <button
               onClick={() => setMostrarModalLogin(false)}
-              className="boton boton--outline boton--completo"
-              style={{ marginTop: 'var(--espacio-md)' }}
+              className="boton boton--outline boton--completo resultados-modal__cerrar"
             >
               Cerrar
             </button>
@@ -182,10 +169,10 @@ const Resultados = () => {
           {/* Encabezado de Resultados */}
           <div className="resultados__encabezado">
             <div className="resultados__estado">
-              <span style={{ fontSize: '4rem' }}>
+              <span className="resultados__estado-emoji">
                 {aprobado ? '✅' : '❌'}
               </span>
-              <span style={{ color: aprobado ? 'var(--color-exito)' : 'var(--color-error)' }}>
+              <span className={`resultados__estado-texto ${aprobado ? 'resultados__estado-texto--aprobado' : 'resultados__estado-texto--no-aprobado'}`}>
                 {aprobado ? '¡Aprobado!' : 'No Aprobado'}
               </span>
             </div>
@@ -194,19 +181,11 @@ const Resultados = () => {
               {evaluacion.puntuacionGlobal}/100
             </div>
             
-            <p style={{ fontSize: 'var(--fuente-lg)', color: 'var(--texto-secundario)', marginTop: 'var(--espacio-md)', maxWidth: '600px', margin: '0 auto' }}>
+            <p className="resultados__resumen">
               {evaluacion.resumen}
             </p>
 
-            <div style={{ 
-              display: 'flex', 
-              gap: 'var(--espacio-md)', 
-              justifyContent: 'center', 
-              marginTop: 'var(--espacio-lg)',
-              fontSize: 'var(--fuente-sm)',
-              color: 'var(--texto-secundario)',
-              flexWrap: 'wrap'
-            }}>
+            <div className="resultados__meta">
               <span>📅 {formatearFecha(entrevista.fechaFin)}</span>
               <span>⏱️ {calcularDuracion()}</span>
               <span>❓ {entrevista.preguntas.length} preguntas</span>
@@ -215,30 +194,25 @@ const Resultados = () => {
 
           {/* Métricas Generales (Siempre visibles - Gratis) */}
           <section className="resultados__contenido">
-            <h2 style={{ fontSize: 'var(--fuente-2xl)', fontWeight: '700', marginBottom: 'var(--espacio-md)' }}>
+            <h2 className="resultados__titulo">
               Resumen de tu Entrevista
             </h2>
             
             <div className="tarjeta">
-              <div style={{ marginBottom: 'var(--espacio-lg)' }}>
-                <h3 style={{ fontSize: 'var(--fuente-lg)', fontWeight: '600', marginBottom: 'var(--espacio-sm)' }}>
+              <div className="resultados__tema">
+                <h3 className="resultados__tema-titulo">
                   Tema: {entrevista.tema}
                 </h3>
-                <p style={{ color: 'var(--texto-secundario)' }}>
+                <p className="resultados__tema-tipo">
                   Tipo: {entrevista.tipo === 'ai_generated' ? '🤖 Generada por IA' : '✏️ Personalizada'}
                 </p>
               </div>
 
-              <div style={{ 
-                padding: 'var(--espacio-lg)', 
-                backgroundColor: 'var(--bg-principal)', 
-                borderRadius: 'var(--radio-md)',
-                borderLeft: `4px solid ${aprobado ? 'var(--color-exito)' : 'var(--color-error)'}`
-              }}>
-                <p style={{ fontSize: 'var(--fuente-lg)' }}>
+              <div className={`resultados__veredicto ${aprobado ? 'resultados__veredicto--aprobado' : 'resultados__veredicto--no-aprobado'}`}>
+                <p className="resultados__veredicto-linea">
                   <strong>Veredicto:</strong> {evaluacion.veredicto}
                 </p>
-                <p style={{ fontSize: 'var(--fuente-lg)', marginTop: 'var(--espacio-sm)' }}>
+                <p className="resultados__veredicto-linea">
                   <strong>Puntuación:</strong> {evaluacion.puntuacionGlobal}/100
                 </p>
               </div>
@@ -247,27 +221,16 @@ const Resultados = () => {
 
           {/* CTA para Análisis Detallado (Si no es premium) */}
           {!puedeVerAnalisisDetallado && (
-            <section style={{ marginTop: 'var(--espacio-2xl)' }}>
-              <div className="tarjeta" style={{ 
-                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', 
-                color: 'var(--texto-claro)',
-                textAlign: 'center',
-                padding: 'var(--espacio-2xl)'
-              }}>
-                <h2 style={{ fontSize: 'var(--fuente-2xl)', fontWeight: '700', marginBottom: 'var(--espacio-md)' }}>
+            <section className="resultados__premium">
+              <div className="resultados__premium-card tarjeta">
+                <h2 className="resultados__premium-titulo">
                   🎯 Desbloquea el Análisis Detallado
                 </h2>
-                <p style={{ fontSize: 'var(--fuente-lg)', marginBottom: 'var(--espacio-lg)', opacity: 0.9 }}>
+                <p className="resultados__premium-descripcion">
                   Obtén feedback específico por cada pregunta, identifica tus fortalezas y áreas de mejora con recomendaciones personalizadas
                 </p>
                 
-                <div style={{ 
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                  gap: 'var(--espacio-md)',
-                  marginBottom: 'var(--espacio-xl)',
-                  textAlign: 'left'
-                }}>
+                <div className="resultados__premium-features">
                   <div>
                     <strong>✓ Análisis pregunta por pregunta</strong>
                   </div>
@@ -288,14 +251,13 @@ const Resultados = () => {
                   </div>
                 </div>
 
-                <div style={{ fontSize: 'var(--fuente-3xl)', fontWeight: '700', marginBottom: 'var(--espacio-md)' }}>
+                <div className="resultados__premium-precio">
                   9.99€
                 </div>
 
                 <button 
-                  className="boton boton--secundario boton--grande"
+                  className="boton boton--secundario boton--grande resultados__premium-boton"
                   onClick={handleVerAnalisisDetallado}
-                  style={{ minWidth: '250px' }}
                 >
                   Obtener Análisis Premium
                 </button>
@@ -306,31 +268,31 @@ const Resultados = () => {
           {/* Análisis Detallado (Premium - Solo si pagó o aprobó) */}
           {puedeVerAnalisisDetallado && evaluacion.feedbackDetallado && (
             <>
-              <section style={{ marginTop: 'var(--espacio-2xl)' }}>
-                <h2 style={{ fontSize: 'var(--fuente-2xl)', fontWeight: '700', marginBottom: 'var(--espacio-lg)' }}>
-                  � Análisis Detallado por Pregunta
+              <section className="resultados__analisis">
+                <h2 className="resultados__titulo">
+                  📊 Análisis Detallado por Pregunta
                 </h2>
                 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--espacio-lg)' }}>
+                <div className="resultados__analisis-lista">
                   {evaluacion.feedbackDetallado.map((item, indice) => (
-                    <div key={indice} className="tarjeta">
-                      <h3 style={{ fontSize: 'var(--fuente-lg)', fontWeight: '700', marginBottom: 'var(--espacio-md)', color: 'var(--color-primario)' }}>
+                    <div key={indice} className="tarjeta resultados__pregunta">
+                      <h3 className="resultados__pregunta-titulo">
                         Pregunta {indice + 1}: {item.pregunta}
                       </h3>
                       
-                      <div style={{ marginBottom: 'var(--espacio-md)', padding: 'var(--espacio-md)', backgroundColor: 'var(--bg-principal)', borderRadius: 'var(--radio-sm)' }}>
-                        <strong style={{ color: 'var(--texto-secundario)', fontSize: 'var(--fuente-sm)' }}>Tu respuesta:</strong>
-                        <p style={{ marginTop: 'var(--espacio-xs)' }}>{item.respuesta}</p>
+                      <div className="resultados__respuesta">
+                        <strong className="resultados__respuesta-label">Tu respuesta:</strong>
+                        <p className="resultados__respuesta-texto">{item.respuesta}</p>
                       </div>
 
-                      <div style={{ marginBottom: 'var(--espacio-md)', padding: 'var(--espacio-md)', backgroundColor: 'var(--bg-info)', borderRadius: 'var(--radio-sm)', borderLeft: '4px solid var(--color-info)' }}>
-                        <strong style={{ color: 'var(--color-info)' }}>💡 Feedback:</strong>
-                        <p style={{ marginTop: 'var(--espacio-xs)' }}>{item.feedback}</p>
+                      <div className="resultados__feedback">
+                        <strong className="resultados__feedback-label">💡 Feedback:</strong>
+                        <p className="resultados__feedback-texto">{item.feedback}</p>
                       </div>
 
-                      <div style={{ padding: 'var(--espacio-md)', backgroundColor: 'var(--bg-exito)', borderRadius: 'var(--radio-sm)', borderLeft: '4px solid var(--color-exito)' }}>
-                        <strong style={{ color: 'var(--color-exito)' }}>⭐ Respuesta Ideal:</strong>
-                        <p style={{ marginTop: 'var(--espacio-xs)' }}>{item.respuestaIdeal}</p>
+                      <div className="resultados__ideal">
+                        <strong className="resultados__ideal-label">⭐ Respuesta Ideal:</strong>
+                        <p className="resultados__ideal-texto">{item.respuestaIdeal}</p>
                       </div>
                     </div>
                   ))}
@@ -340,8 +302,8 @@ const Resultados = () => {
           )}
 
           {/* Acciones Finales */}
-          <section style={{ marginTop: 'var(--espacio-2xl)', display: 'flex', justifyContent: 'center', gap: 'var(--espacio-lg)', flexWrap: 'wrap' }}>
-            <Link 
+          <section className="resultados__acciones">
+            <Link
               to={estaAutenticado() ? "/lobby" : "/"} 
               className="boton boton--primario boton--grande"
             >
@@ -352,7 +314,7 @@ const Resultados = () => {
               className="boton boton--secundario boton--grande"
               onClick={handleDescargarResultados}
             >
-              {esPremium() ? '� Ver en Historial' : '�📥 Descargar Resultados'}
+              {esPremium() ? '📊 Ver en Historial' : '📥 Descargar Resultados'}
             </button>
 
             {estaAutenticado() && esPremium() && (

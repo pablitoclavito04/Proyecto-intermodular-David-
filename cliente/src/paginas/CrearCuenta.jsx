@@ -78,18 +78,37 @@ const CrearCuenta = () => {
     setCargando(true);
     
     try {
-      // Aquí iría la llamada a la API
-      // const respuesta = await registrarUsuario(formulario);
-      console.log('Formulario enviado:', formulario);
+      // Llamada a la API del backend
+      const respuesta = await fetch('http://localhost:5000/api/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          nombre: `${formulario.nombre} ${formulario.apellidos}`,
+          email: formulario.email,
+          password: formulario.contrasena
+        })
+      });
+
+      const datos = await respuesta.json();
+
+      if (!respuesta.ok) {
+        throw new Error(datos.error || 'Error al crear la cuenta');
+      }
+
+      // Guardar token y datos del usuario en localStorage
+      localStorage.setItem('token', datos.token);
+      localStorage.setItem('usuario', JSON.stringify(datos.usuario));
       
-      // Simulación de llamada a API
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      console.log('✅ Cuenta creada exitosamente:', datos);
       
       // Redireccionar al lobby después del registro exitoso
       navigate('/lobby');
       
     } catch (error) {
-      setErrores({ general: 'Error al crear la cuenta. Por favor, intenta de nuevo.' });
+      console.error('❌ Error al registrar:', error);
+      setErrores({ general: error.message || 'Error al crear la cuenta. Por favor, intenta de nuevo.' });
     } finally {
       setCargando(false);
     }

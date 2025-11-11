@@ -8,13 +8,21 @@
     "dev": "node index.js",
     "start": "node index.js"
   },
-  "keywords": ["ia", "gemini", "entrevistas", "audio"],
+  "keywords": [
+    "ia",
+    "gemini",
+    "entrevistas",
+    "audio"
+  ],
   "author": "",
   "license": "MIT",
   "dependencies": {
     "@google/genai": "^1.28.0",
-    "express": "^4.18.2",
+    "bcryptjs": "^3.0.3",
     "cors": "^2.8.5",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.19.3"
   }
 }

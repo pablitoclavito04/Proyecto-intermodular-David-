@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import { statsService, interviewService } from '../services';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import { FiDownload, FiTrendingUp, FiAward, FiClock, FiPlus, FiSettings } from 'react-icons/fi';
+import '../css/Dashboard.css';
 
 const Dashboard = () => {
   const { t } = useTranslation();
@@ -160,8 +161,8 @@ const Dashboard = () => {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+      <div className="dashboard__loading">
+        <div className="dashboard__loading-spinner"></div>
       </div>
     );
   }
@@ -169,29 +170,29 @@ const Dashboard = () => {
   const COLORS = ['#3b82f6', '#8b5cf6', '#ef4444', '#10b981'];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-800 dark:text-white">
+    <div className="dashboard dashboard--dark">
+      <div className="dashboard__container">
+        <div className="dashboard__header">
+          <h1 className="dashboard__title dashboard__title--dark">
             {t('dashboard.title')}
           </h1>
-          <div className="flex gap-4">
+          <div className="dashboard__actions">
             <button
               onClick={() => setShowCreateForm(!showCreateForm)}
               disabled={formLoading}
-              className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold transition disabled:opacity-50"
+              className="dashboard__button dashboard__button--new"
             >
               <FiPlus /> {t('interview.newInterview')}
             </button>
             <button
               onClick={() => navigate('/interviews')}
-              className="flex items-center gap-2 bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg font-semibold transition"
+              className="dashboard__button dashboard__button--interviews"
             >
               <FiAward /> {t('interview.myInterviews')}
             </button>
             <button
               onClick={downloadReport}
-              className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg"
+              className="dashboard__button dashboard__button--download"
             >
               <FiDownload /> {t('dashboard.downloadReport')}
             </button>
@@ -199,17 +200,17 @@ const Dashboard = () => {
         </div>
 
         {showCreateForm && (
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8">
-            <h2 className="text-xl font-bold mb-4 text-gray-800 dark:text-white">
+          <div className="dashboard__form dashboard__form--dark">
+            <h2 className="dashboard__form-title dashboard__form-title--dark">
               {t('interview.newInterview')}
             </h2>
-            <form onSubmit={handleCreateInterview} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <form onSubmit={handleCreateInterview} className="dashboard__form-grid">
               <input
                 type="text"
                 placeholder="Interview Title"
                 value={formData.title}
                 onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                className="border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+                className="dashboard__form-input dashboard__form-input--dark"
                 required
                 disabled={formLoading}
               />
@@ -218,14 +219,14 @@ const Dashboard = () => {
                 placeholder="Profession (e.g., Frontend Developer)"
                 value={formData.profession}
                 onChange={(e) => setFormData({ ...formData, profession: e.target.value })}
-                className="border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+                className="dashboard__form-input dashboard__form-input--dark"
                 required
                 disabled={formLoading}
               />
               <select
                 value={formData.type}
                 onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                className="border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+                className="dashboard__form-input dashboard__form-input--dark"
                 disabled={formLoading}
               >
                 <option value="ai_generated">AI Generated</option>
@@ -234,7 +235,7 @@ const Dashboard = () => {
               <select
                 value={formData.difficulty}
                 onChange={(e) => setFormData({ ...formData, difficulty: e.target.value })}
-                className="border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+                className="dashboard__form-input dashboard__form-input--dark"
                 disabled={formLoading}
               >
                 <option value="junior">Junior</option>
@@ -244,7 +245,7 @@ const Dashboard = () => {
               <select
                 value={formData.language}
                 onChange={(e) => setFormData({ ...formData, language: e.target.value })}
-                className="border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+                className="dashboard__form-input dashboard__form-input--dark"
                 disabled={formLoading}
               >
                 <option value="en">English</option>
@@ -252,15 +253,15 @@ const Dashboard = () => {
                 <option value="fr">Français</option>
                 <option value="de">Deutsch</option>
               </select>
-              <div className="md:col-span-2 flex gap-2">
+              <div className="dashboard__form-actions">
                 <button
                   type="submit"
                   disabled={formLoading}
-                  className="flex-1 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-semibold transition disabled:opacity-50 flex items-center justify-center gap-2"
+                  className="dashboard__button dashboard__button--save"
                 >
                   {formLoading ? (
                     <>
-                      <div className="animate-spin rounded-full h-4 w-4 border-t-2 border-b-2 border-white"></div>
+                      <div className="dashboard__spinner"></div>
                       Creating...
                     </>
                   ) : (
@@ -271,7 +272,7 @@ const Dashboard = () => {
                   type="button"
                   onClick={() => setShowCreateForm(false)}
                   disabled={formLoading}
-                  className="flex-1 bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg font-semibold transition disabled:opacity-50"
+                  className="dashboard__button dashboard__button--cancel"
                 >
                   Cancel
                 </button>
@@ -280,36 +281,36 @@ const Dashboard = () => {
           </div>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="dashboard__stats-grid">
           <StatCard
             title={t('dashboard.totalInterviews')}
             value={stats?.totalInterviews || 0}
             icon={<FiTrendingUp className="text-2xl" />}
-            color="from-blue-500 to-blue-600"
+            color="stat-card--blue"
           />
           <StatCard
             title={t('dashboard.completedInterviews')}
             value={stats?.completedInterviews || 0}
             icon={<FiAward className="text-2xl" />}
-            color="from-green-500 to-green-600"
+            color="stat-card--green"
           />
           <StatCard
             title={t('dashboard.averageScore')}
             value={`${stats?.averageScore || 0}%`}
             icon={<FiAward className="text-2xl" />}
-            color="from-purple-500 to-purple-600"
+            color="stat-card--purple"
           />
           <StatCard
             title={t('dashboard.totalDuration')}
             value={`${Math.round((stats?.totalDuration || 0) / 60)} min`}
             icon={<FiClock className="text-2xl" />}
-            color="from-orange-500 to-orange-600"
+            color="stat-card--orange"
           />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-            <h2 className="text-xl font-bold mb-4 text-gray-800 dark:text-white">
+        <div className="dashboard__charts-grid">
+          <div className="dashboard__chart-card dashboard__chart-card--dark">
+            <h2 className="dashboard__chart-title dashboard__chart-title--dark">
               {t('dashboard.performanceTrends')}
             </h2>
             {trends && trends.length > 0 ? (
@@ -324,12 +325,12 @@ const Dashboard = () => {
                 </LineChart>
               </ResponsiveContainer>
             ) : (
-              <p className="text-gray-500 dark:text-gray-400">{t('interview.noInterviews')}</p>
+              <p className="dashboard__chart-empty dashboard__chart-empty--dark">{t('interview.noInterviews')}</p>
             )}
           </div>
 
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-            <h2 className="text-xl font-bold mb-4 text-gray-800 dark:text-white">
+          <div className="dashboard__chart-card dashboard__chart-card--dark">
+            <h2 className="dashboard__chart-title dashboard__chart-title--dark">
               {t('dashboard.scoreDistribution')}
             </h2>
             {stats?.interviewsByProfession && Object.keys(stats.interviewsByProfession).length > 0 ? (
@@ -356,7 +357,7 @@ const Dashboard = () => {
                 </PieChart>
               </ResponsiveContainer>
             ) : (
-              <p className="text-gray-500 dark:text-gray-400">{t('interview.noInterviews')}</p>
+              <p className="dashboard__chart-empty dashboard__chart-empty--dark">{t('interview.noInterviews')}</p>
             )}
           </div>
         </div>
@@ -367,13 +368,13 @@ const Dashboard = () => {
 
 const StatCard = ({ title, value, icon, color }) => {
   return (
-    <div className={`bg-gradient-to-br ${color} rounded-lg shadow-lg p-6 text-white`}>
-      <div className="flex justify-between items-start">
+    <div className={`stat-card ${color}`}>
+      <div className="stat-card__content">
         <div>
-          <p className="text-sm opacity-90">{title}</p>
-          <p className="text-3xl font-bold mt-2">{value}</p>
+          <p className="stat-card__title">{title}</p>
+          <p className="stat-card__value">{value}</p>
         </div>
-        <div className="opacity-50">{icon}</div>
+        <div className="stat-card__icon">{icon}</div>
       </div>
     </div>
   );

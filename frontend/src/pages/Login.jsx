@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import { authService } from '../services';
 import { useAuthStore } from '../store';
 import { FiMail, FiLock } from 'react-icons/fi';
+import '../css/Login.css';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -52,43 +53,43 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-500 to-purple-600 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center p-4">
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-8 w-full max-w-md">
-        <h2 className="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-white">
+    <div className="login login--dark">
+      <div className="login__container login__container--dark">
+        <h2 className="login__title login__title--dark">
           {t('auth.loginTitle')}
         </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+        <form onSubmit={handleSubmit} className="login__form">
+          <div className="login__field">
+            <label className="login__label login__label--dark">
               {t('common.email')}
             </label>
-            <div className="flex items-center border-2 border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2">
-              <FiMail className="text-gray-400 mr-2" />
+            <div className="login__input-wrapper login__input-wrapper--dark">
+              <FiMail className="login__icon" />
               <input
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
                 placeholder={t('common.email')}
-                className="w-full bg-transparent outline-none text-gray-800 dark:text-white"
+                className="login__input login__input--dark"
               />
             </div>
           </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <div className="login__field">
+            <label className="login__label login__label--dark">
               {t('common.password')}
             </label>
-            <div className="flex items-center border-2 border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2">
-              <FiLock className="text-gray-400 mr-2" />
+            <div className="login__input-wrapper login__input-wrapper--dark">
+              <FiLock className="login__icon" />
               <input
                 type="password"
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
                 placeholder={t('common.password')}
-                className="w-full bg-transparent outline-none text-gray-800 dark:text-white"
+                className="login__input login__input--dark"
               />
             </div>
           </div>
@@ -96,17 +97,20 @@ const Login = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-2 rounded-lg transition duration-200 disabled:opacity-50"
+            className="login__submit"
           >
             {loading ? t('common.loading') : t('common.login')}
           </button>
         </form>
 
-        <p className="mt-6 text-center text-gray-600 dark:text-gray-400">
-          {t('auth.noAccount')} 
-          <a href="/register" className="text-blue-600 dark:text-blue-400 ml-1 font-bold hover:underline">
+        <p className="login__link login__link--dark">
+          {t('auth.noAccount')}
+          <span
+            onClick={() => navigate('/register')}
+            className="login__link-text login__link-text--dark"
+          >
             {t('common.register')}
-          </a>
+          </span>
         </p>
       </div>
     </div>

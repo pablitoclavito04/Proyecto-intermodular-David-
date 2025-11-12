@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import { authService } from '../services';
 import { useAuthStore } from '../store';
 import { FiMail, FiLock, FiUser } from 'react-icons/fi';
+import '../css/Register.css';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -54,90 +55,90 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-500 to-purple-600 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center p-4">
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-8 w-full max-w-md">
-        <h2 className="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-white">
+    <div className="register register--dark">
+      <div className="register__container register__container--dark">
+        <h2 className="register__title register__title--dark">
           {t('auth.registerTitle')}
         </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+        <form onSubmit={handleSubmit} className="register__form">
+          <div className="register__field">
+            <label className="register__label register__label--dark">
               {t('common.firstName')}
             </label>
-            <div className="flex items-center border-2 border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2">
-              <FiUser className="text-gray-400 mr-2" />
+            <div className="register__input-wrapper register__input-wrapper--dark">
+              <FiUser className="register__icon" />
               <input
                 type="text"
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
                 placeholder={t('common.firstName')}
-                className="w-full bg-transparent outline-none text-gray-800 dark:text-white"
+                className="register__input register__input--dark"
               />
             </div>
           </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <div className="register__field">
+            <label className="register__label register__label--dark">
               {t('common.lastName')}
             </label>
-            <div className="flex items-center border-2 border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2">
-              <FiUser className="text-gray-400 mr-2" />
+            <div className="register__input-wrapper register__input-wrapper--dark">
+              <FiUser className="register__icon" />
               <input
                 type="text"
                 name="lastName"
                 value={formData.lastName}
                 onChange={handleChange}
                 placeholder={t('common.lastName')}
-                className="w-full bg-transparent outline-none text-gray-800 dark:text-white"
+                className="register__input register__input--dark"
               />
             </div>
           </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <div className="register__field">
+            <label className="register__label register__label--dark">
               {t('common.email')}
             </label>
-            <div className="flex items-center border-2 border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2">
-              <FiMail className="text-gray-400 mr-2" />
+            <div className="register__input-wrapper register__input-wrapper--dark">
+              <FiMail className="register__icon" />
               <input
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
                 placeholder={t('common.email')}
-                className="w-full bg-transparent outline-none text-gray-800 dark:text-white"
+                className="register__input register__input--dark"
               />
             </div>
           </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <div className="register__field">
+            <label className="register__label register__label--dark">
               {t('common.password')}
             </label>
-            <div className="flex items-center border-2 border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2">
-              <FiLock className="text-gray-400 mr-2" />
+            <div className="register__input-wrapper register__input-wrapper--dark">
+              <FiLock className="register__icon" />
               <input
                 type="password"
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
                 placeholder={t('common.password')}
-                className="w-full bg-transparent outline-none text-gray-800 dark:text-white"
+                className="register__input register__input--dark"
               />
             </div>
           </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <div className="register__field">
+            <label className="register__label register__label--dark">
               {t('common.language')}
             </label>
             <select
               name="language"
               value={formData.language}
               onChange={handleChange}
-              className="w-full border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg px-3 py-2"
+              className="register__select register__select--dark"
             >
               <option value="en">English</option>
               <option value="es">Español</option>
@@ -149,17 +150,20 @@ const Register = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-2 rounded-lg transition duration-200 disabled:opacity-50"
+            className="register__submit"
           >
             {loading ? t('common.loading') : t('common.register')}
           </button>
         </form>
 
-        <p className="mt-6 text-center text-gray-600 dark:text-gray-400">
-          {t('auth.haveAccount')} 
-          <a href="/login" className="text-blue-600 dark:text-blue-400 ml-1 font-bold hover:underline">
+        <p className="register__link register__link--dark">
+          {t('auth.haveAccount')}
+          <span
+            onClick={() => navigate('/login')}
+            className="register__link-text register__link-text--dark"
+          >
             {t('common.login')}
-          </a>
+          </span>
         </p>
       </div>
     </div>

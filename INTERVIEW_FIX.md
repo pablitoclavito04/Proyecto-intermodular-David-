@@ -4,14 +4,14 @@
 
 ### Frontend (`frontend/src/pages/`)
 
-#### 1. **Interviews.js** - Página de gestión de entrevistas
+#### 1. **Interviews.jsx** - Página de gestión de entrevistas
 - ✅ Agregado selector de idioma en el formulario de creación
 - ✅ Mejorado el manejo de errores con mensajes más específicos
 - ✅ Agregada validación de campos requeridos
 - ✅ Mejorado el feedback al usuario con mensajes informativos
 - ✅ Navegación mejorada después de crear una entrevista
 
-#### 2. **InterviewSession.js** - Página de sesión de entrevista
+#### 2. **InterviewSession.jsx** - Página de sesión de entrevista
 - ✅ Mejorado el manejo de errores al cargar entrevistas
 - ✅ Validación de que la entrevista tenga preguntas antes de comenzar
 - ✅ Mejorado el sistema de grabación de audio con feedback visual

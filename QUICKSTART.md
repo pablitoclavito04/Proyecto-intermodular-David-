@@ -24,7 +24,7 @@ nano backend/.env
 # Add: PAYPAL_CLIENT_ID=your_id
 # Add: PAYPAL_SECRET=your_secret
 
-# Edit frontend/.env  
+# Edit frontend/.env
 nano frontend/.env
 # Add: REACT_APP_PAYPAL_CLIENT_ID=your_id
 ```

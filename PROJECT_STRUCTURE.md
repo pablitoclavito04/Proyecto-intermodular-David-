@@ -9,7 +9,7 @@ ai-interview-platform/
 │   │   ├── Interview.js        # Interview sessions
 │   │   ├── Question.js         # Interview questions
 │   │   ├── Response.js         # User responses
-│   │   └── Subscription.js     # Subscription management
+│   │   └── Subscription.jsx     # Subscription management
 │   │
 │   ├── 📁 routes/              # API Endpoints
 │   │   ├── auth.js             # Authentication (register, login)
@@ -52,14 +52,14 @@ ai-interview-platform/
 │   │   │   └── Header.js       # Navigation header
 │   │   │
 │   │   ├── 📁 pages/           # Page Components
-│   │   │   ├── Home.js         # Landing page
-│   │   │   ├── Login.js        # Login page
-│   │   │   ├── Register.js     # Registration page
-│   │   │   ├── Dashboard.js    # User dashboard
-│   │   │   ├── Interviews.js   # Interviews list
-│   │   │   ├── InterviewSession.js # Interview practice
-│   │   │   ├── Subscription.js # Pricing & subscription
-│   │   │   └── Settings.js     # User settings
+│   │   │   ├── Home.jsx         # Landing page
+│   │   │   ├── Login.jsx        # Login page
+│   │   │   ├── Register.jsx     # Registration page
+│   │   │   ├── Dashboard.jsx    # User dashboard
+│   │   │   ├── Interviews.jsx   # Interviews list
+│   │   │   ├── InterviewSession.jsx # Interview practice
+│   │   │   ├── Subscription.jsx # Pricing & subscription
+│   │   │   └── Settings.jsx     # User settings
 │   │   │
 │   │   ├── 📁 services/        # API Services
 │   │   │   ├── api.js          # Axios instance

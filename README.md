@@ -96,12 +96,37 @@ cp frontend/.env.example frontend/.env
 3. **Update .env files with your credentials**
 ```bash
 # backend/.env
-OPENAI_API_KEY=your_openai_api_key
-PAYPAL_CLIENT_ID=your_paypal_client_id
-PAYPAL_SECRET=your_paypal_secret
+PORT=5000
+MONGODB_URI=mongodb://admin:password@mongo:27017/ai-interview
+JWT_SECRET=your_super_secret_jwt_key_change_this_in_production_12345
+NODE_ENV=development
+
+# OpenAI Configuration (Required)
+# Get your key from https://platform.openai.com/api-keys
+OPENAI_API_KEY=sk-test-key-dummy-for-development
+
+# PayPal Configuration (Required for payments)
+PAYPAL_MODE=sandbox
+PAYPAL_CLIENT_ID=AX1s3__BIV5eW-test-client-id
+PAYPAL_SECRET=test-secret-key-dummy
+
+# Frontend URL
+FRONTEND_URL=http://localhost:3000
+
+# Supported Languages
+SUPPORTED_LANGUAGES=en,es,fr,de,pt,it,ja,zh
+REACT_APP_GEMINI_API_KEY="generar api en google studios"
+GEMINI_API_KEY="misma api que arriba"
+
 
 # frontend/.env
 REACT_APP_PAYPAL_CLIENT_ID=your_paypal_client_id
+
+REACT_APP_API_URL=http://localhost:5000/api
+REACT_APP_PAYPAL_CLIENT_ID=AX1s3__BIV5eW-test-client-id
+REACT_APP_GEMINI_API_KEY="generar api en google studios"
+GEMINI_API_KEY="misma api que arriba"
+
 ```
 
 4. **Start the application**

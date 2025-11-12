@@ -1,0 +1,69 @@
+services:
+  # MongoDB
+  mongo:
+    image: mongo:7.0
+    container_name: ai_interview_mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    command: mongod
+    networks:
+      - ai_network
+
+  # Backend
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ai_interview_backend
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      PORT: 5000
+      MONGODB_URI: mongodb://mongo:27017/ai-interview
+      JWT_SECRET: ${JWT_SECRET:-your_jwt_secret_key_change_this_in_production}
+      NODE_ENV: ${NODE_ENV:-development}
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      PAYPAL_MODE: ${PAYPAL_MODE:-sandbox}
+      PAYPAL_CLIENT_ID: ${PAYPAL_CLIENT_ID}
+      PAYPAL_SECRET: ${PAYPAL_SECRET}
+      FRONTEND_URL: http://localhost:3000
+    depends_on:
+      mongo:
+        condition: service_started
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    networks:
+      - ai_network
+
+  # Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: ai_interview_frontend
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      REACT_APP_API_URL: http://localhost:5000/api
+      REACT_APP_PAYPAL_CLIENT_ID: ${PAYPAL_CLIENT_ID}
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    networks:
+      - ai_network
+
+volumes:
+  mongo_data:
+    driver: local
+
+networks:
+  ai_network:
+    driver: bridge

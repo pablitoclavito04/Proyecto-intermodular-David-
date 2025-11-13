@@ -25,17 +25,17 @@
   --login-bg-button: var(--xanthous);
   --login-bg-button-hover: #d4a02e;
 
-  /* Textos Login */
-  --login-text-dark: var(--black-olive);
-  --login-text-medium: var(--dim-gray);
-  --login-text-gray: var(--taupe-gray);
-  --login-text-gray-light: #c4b8b7;
-  --login-text-white: var(--eggshell);
-  --login-text-light: #dcd5d4;
+  /* Textos Login - Mayor contraste */
+  --login-text-dark: #2d2a25;
+  --login-text-medium: #5d5651;
+  --login-text-gray: #8a7f7e;
+  --login-text-gray-light: #a39594;
+  --login-text-white: #ffffff;
+  --login-text-light: #e8e3e2;
 
-  /* Bordes Login */
-  --login-border-light: var(--taupe-gray);
-  --login-border-dark: var(--dim-gray);
+  /* Bordes Login - Más visibles */
+  --login-border-light: #8a7f7e;
+  --login-border-dark: #5d5651;
 
   /* Sombras Login */
   --login-shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
@@ -124,10 +124,12 @@
   border: 2px solid var(--login-border-light);
   border-radius: var(--login-radius-md);
   padding: var(--login-spacing-sm) var(--login-spacing-md);
+  background-color: #fafafa;
 }
 
 .login__input-wrapper--dark {
   border-color: var(--login-border-dark);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .login__icon {
@@ -208,4 +210,3 @@
 .login__link-text--dark:hover {
   color: var(--login-primary);
 }
-

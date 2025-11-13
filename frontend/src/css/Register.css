@@ -26,17 +26,17 @@
   --register-bg-button-hover: #d4a02e;
   --register-bg-select-dark: #5d5651;
 
-  /* Textos Register */
-  --register-text-dark: var(--black-olive);
-  --register-text-medium: var(--dim-gray);
-  --register-text-gray: var(--taupe-gray);
-  --register-text-gray-light: #c4b8b7;
-  --register-text-white: var(--eggshell);
-  --register-text-light: #dcd5d4;
+  /* Textos Register - Mayor contraste */
+  --register-text-dark: #2d2a25;
+  --register-text-medium: #5d5651;
+  --register-text-gray: #8a7f7e;
+  --register-text-gray-light: #a39594;
+  --register-text-white: #ffffff;
+  --register-text-light: #e8e3e2;
 
-  /* Bordes Register */
-  --register-border-light: var(--taupe-gray);
-  --register-border-dark: var(--dim-gray);
+  /* Bordes Register - Más visibles */
+  --register-border-light: #8a7f7e;
+  --register-border-dark: #5d5651;
 
   /* Sombras Register */
   --register-shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
@@ -125,10 +125,12 @@
   border: 2px solid var(--register-border-light);
   border-radius: var(--register-radius-md);
   padding: var(--register-spacing-sm) var(--register-spacing-md);
+  background-color: #fafafa;
 }
 
 .register__input-wrapper--dark {
   border-color: var(--register-border-dark);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .register__icon {
@@ -156,11 +158,12 @@
   border: 2px solid var(--register-border-light);
   border-radius: var(--register-radius-md);
   padding: var(--register-spacing-sm) var(--register-spacing-md);
+  background-color: #fafafa;
 }
 
 .register__select--dark {
   border-color: var(--register-border-dark);
-  background-color: var(--register-bg-select-dark);
+  background-color: rgba(0, 0, 0, 0.2);
   color: var(--register-text-white);
 }
 

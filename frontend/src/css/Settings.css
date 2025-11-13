@@ -338,6 +338,7 @@
   border-radius: var(--settings-radius-sm);
   padding: var(--settings-spacing-sm) var(--settings-spacing-md);
   outline: none;
+  background-color: #fafafa;
   color: var(--settings-text-dark);
 }
 
@@ -347,7 +348,7 @@
 
 .settings__input--dark {
   border-color: var(--settings-border-dark);
-  background-color: var(--settings-bg-input-dark);
+  background-color: rgba(0, 0, 0, 0.2);
   color: var(--settings-text-white);
 }
 
@@ -356,6 +357,7 @@
   border-radius: var(--settings-radius-sm);
   padding: var(--settings-spacing-sm) var(--settings-spacing-md);
   outline: none;
+  background-color: #fafafa;
   color: var(--settings-text-dark);
 }
 
@@ -365,7 +367,7 @@
 
 .settings__select--dark {
   border-color: var(--settings-border-dark);
-  background-color: var(--settings-bg-input-dark);
+  background-color: rgba(0, 0, 0, 0.2);
   color: var(--settings-text-white);
 }
 

@@ -19,3 +19,5 @@ https://docs.google.com/document/d/1xu7vyxbRvfv0ZTRClv94e4x6COEIJ8DxJaOmVWwDtB4/
 - Pablo Fernández - Product Owner.
 - Alejandro Bravo y Sergio Aragón - Equipo Scrum.
 
+# URL TEMPORAL
+![Web](192.168.13.21:3000)
